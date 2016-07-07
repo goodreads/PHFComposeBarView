@@ -620,9 +620,9 @@ static CGFloat kTextViewToSuperviewHeightDelta;
 }
 
 - (void)setupDelegateChainForTextView {
-    PHFDelegateChain *delegateChain = [PHFDelegateChain delegateChainWithObjects:self, [self delegate], nil];
+    PHFDelegateChain *delegateChain = [PHFDelegateChain delegateChainWithObjects:[self delegate], nil];
     [self setDelegateChain:delegateChain];
-    [[self textView] setDelegate:(id<UITextViewDelegate>)delegateChain];
+    [[self textView] setDelegate:self];
 }
 
 - (CGFloat)textHeight {
